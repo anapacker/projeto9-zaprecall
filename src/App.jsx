@@ -38,7 +38,7 @@ const ContainerLogo = styled.header`
   
     h1{
       color: white;
-      font-size:45px;
+      font-size:40px;
     }
     img{
       width: 50px;

@@ -4,24 +4,22 @@ import deckCards from "./deckCards"
 
 
 export default function BoxCards(){
+
     return(
-        <TodosOsCards>
+        <CardPerguntaFechada>
             {deckCards.map((card, i) =>(
-                <Flashcards cont={i +1}/>
+                <Flashcards key={i} card={card} cont={i +1}/>
     
             ))}
-        </TodosOsCards>
+        </CardPerguntaFechada>
         )
     }
 
 
-
-export const TodosOsCards = styled.ul`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 10px;
-  
-  
+const CardPerguntaFechada = styled.li`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
 `
