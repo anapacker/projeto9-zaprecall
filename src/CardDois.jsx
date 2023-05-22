@@ -7,9 +7,9 @@ export default function CardDois({card, handleClick, estadoDoCard}) {
             <p>{card.answer}</p>
 
             <BoxButton onClick={handleClick}>
-                <button>Não lembrei</button>
-                <button>Quase não lembrei</button>
-                <button>Zap!</button>
+                <button className="vermelho">Não lembrei</button>
+                <button className="amarelo">Quase não lembrei</button>
+                <button className="verde">Zap!</button>
             </BoxButton> 
 
         </ConteudoCardDois>
@@ -20,17 +20,26 @@ const ConteudoCardDois = styled.div`
     flex-direction: column;
 
 `
-const BoxButton = styled.button`
+const BoxButton = styled.div`
     width: 100%;
-    border: none;
-    outline: none;
-    cursor: pointer;
     display: flex;
     justify-content: space-around;
     align-items: center;
     button{
+        border: none;
+        outline: none;
+        cursor: pointer;
         width: 85px;
-        height: 37;
+        height: 80px;
         font-size: 12px;
+    }
+    .vermelho{
+        background:#FF3030;
+    }
+    .verde{
+        background:#2FBE34;
+    }
+    .amarelo{
+        background: #FF922E;
     }
 `
