@@ -1,16 +1,45 @@
+import { useState } from "react"
 import styled from "styled-components"
 
-export default function CardDois({card, handleClick, estadoDoCard}) {
+export default function CardDois({ card, handleClick, setEscolha}) {
+    
+    function statusEscolha(escolhido) {
+        if(escolhido == "Não lembrei"){
+            setEscolha("Não lembrei")
+        } 
+        if(escolhido == "Quase não lembrei"){
+            setEscolha("Quase não lembrei")
+        } 
+        if(escolhido == "Zap!"){
+            setEscolha("Zap!")
+        }
+
+    }
 
     return (
         <ConteudoCardDois>
-            <p>{card.answer}</p>
+            <p data-test="flashcard-text">{card.answer}</p>
 
-            <BoxButton onClick={handleClick}>
-                <button className="vermelho">Não lembrei</button>
-                <button className="amarelo">Quase não lembrei</button>
-                <button className="verde">Zap!</button>
-            </BoxButton> 
+            <BoxButton>
+                <button onClick={() => {
+                    statusEscolha("Não lembrei")
+                    handleClick()
+                }} className="vermelho">
+                    Não lembrei
+                </button>
+                <button onClick={() => {
+                    statusEscolha("Quase não lembrei")
+                    handleClick()
+                }} className="amarelo">
+                    Quase não lembrei
+                </button>
+                <button onClick={() => {
+                    statusEscolha("Zap!")
+                    handleClick()
+                }} className="verde">
+                    Zap!
+                </button>
+            </BoxButton>
 
         </ConteudoCardDois>
     )

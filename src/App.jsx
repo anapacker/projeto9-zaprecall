@@ -7,10 +7,7 @@ function App() {
 
   return (
     <TelaInicial>
-      <ContainerLogo>
-        <img src="../assets/logo.png" alt="Logo ZapRecall - raio amarelo" />
-        <h1>ZapRecall</h1>
-      </ContainerLogo>
+      
       <BoxCards/>
       <Footer/>
     </TelaInicial>
@@ -27,23 +24,6 @@ const TelaInicial = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-`
-const ContainerLogo = styled.header`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 20px;
-  margin:30px 0px;
-
-  
-    h1{
-      color: white;
-      font-size:40px;
-    }
-    img{
-      width: 50px;
-      
-    }
 `
 
 

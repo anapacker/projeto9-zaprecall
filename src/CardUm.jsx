@@ -4,7 +4,7 @@ export default function CardUm({card, handleClick, estadoDoCard}) {
 
     return (
         <>
-            <p>{card.question}</p>
+            <p data-test="flashcard-text">{card.question}</p>
             <FlipButton onClick={handleClick}>
                 <img src="../assets/seta_virar.png" alt="seta para mostrar resposta" estadoDoCard={estadoDoCard} />
             </FlipButton>

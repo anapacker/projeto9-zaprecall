@@ -6,6 +6,7 @@ import CardDois from "./CardDois"
 
 export default function Flashcards({card, cont}){
     const [estadoDoCard, setEstadoDoCard] = useState(0)
+    const [escolha, setEscolha] = useState("")
 
 
     function handleClick(){
@@ -15,13 +16,16 @@ export default function Flashcards({card, cont}){
 
     function retornarConteudo(){
         if(estadoDoCard == 0){
-            return <CardZero cont={cont} handleClick={handleClick} estadoDoCard={estadoDoCard}/>
+            return <CardZero cont={cont} handleClick={handleClick} estadoDoCard={estadoDoCard} escolha={escolha}/>
         }
         if(estadoDoCard == 1) {
             return <CardUm card={card} handleClick={handleClick} estadoDoCard={estadoDoCard}/>
         }
         if(estadoDoCard == 2){
-            return <CardDois card={card} handleClick={handleClick} estadoDoCard={estadoDoCard}/>
+            return <CardDois card={card} handleClick={handleClick} estadoDoCard={estadoDoCard} setEscolha={setEscolha}/>
+        }
+        if(estadoDoCard == 3){
+            return <CardZero cont={cont} handleClick={handleClick} estadoDoCard={estadoDoCard} escolha={escolha}/>
         }
     }
                     
@@ -29,7 +33,7 @@ export default function Flashcards({card, cont}){
 
     return(
         <>
-            <ConteudoCard estadoDoCard={estadoDoCard}>
+            <ConteudoCard data-test="flashcard" estadoDoCard={estadoDoCard}>
                 {retornarConteudo()}
             </ConteudoCard>
         </>
@@ -40,8 +44,21 @@ export default function Flashcards({card, cont}){
 
 const ConteudoCard = styled.div`
     width: 65vw;
-    height: ${props => (props.estadoDoCard ? '95px' : 'fit-content')};
-    background-color: ${props => (props.estadoDoCard ? '#FFFFD4' : '#FFFFFF' )} ;
+    height: ${props => {
+         if(props.estadoDoCard == 0 || props.estadoDoCard >= 3){
+            return 'fit-content'
+        }   
+            return '95px'
+    }
+       };
+    background: ${props => {
+         if(props.estadoDoCard == 0 || props.estadoDoCard >= 3){
+            return '#FFFFFF'
+        }   
+            return '#FFFFD4'
+    }
+       };
+
     padding: 15px 15px;
     border-radius: 5px;
     font-size: 16px;
@@ -51,4 +68,3 @@ const ConteudoCard = styled.div`
     color: #333333;
 
 `
-
