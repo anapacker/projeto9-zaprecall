@@ -42,7 +42,7 @@ export default function Flashcards({card, cont, setQtdConcluidos,qtdConcluidos})
 }
 
 
-const ConteudoCard = styled.div`
+const ConteudoCard = styled.li`
     width: 65vw;
     height: ${props => {
          if(props.estadoDoCard == 0 || props.estadoDoCard >= 3){

@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export default function Footer({deckCards, qtdConcluidos}){
     return(
-        <FooterConcluido>
+        <FooterConcluido data-test="footer">
           <p>{qtdConcluidos}/{deckCards.length} CONCLUÍDOS</p>
         </FooterConcluido>
     )
@@ -20,5 +20,4 @@ const FooterConcluido = styled.footer`
   font-size: 18px;
   color: #333333;
   padding: 25px 0px;
-
 `

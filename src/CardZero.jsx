@@ -6,17 +6,17 @@ export default function CardZero({ cont, handleClick, estadoDoCard, escolha }) {
     function renderizarStatusCard(){
       if(escolha == "Não lembrei"){
         return(
-            <img src="../assets/icone_erro.png" alt="icone de incorreto" /> 
+            <img data-test="no-icon" src="../assets/icone_erro.png" alt="icone de incorreto" /> 
 
         )
       }else if(escolha == "Quase não lembrei"){
         return(
-            <img src="../assets/icone_quase.png" alt="icone de quase acertou" /> 
+            <img data-test="partial-icon" src="../assets/icone_quase.png" alt="icone de quase acertou" /> 
 
         )
       }
       return(
-        <img src="../assets/icone_certo.png" alt="icone de correto" /> 
+        <img data-test="zap-icon" src="../assets/icone_certo.png" alt="icone de correto" /> 
       )
     
 
@@ -50,8 +50,8 @@ export default function CardZero({ cont, handleClick, estadoDoCard, escolha }) {
         <>
             <p data-test="flashcard-text" >{escolha ? recebeAlgumaCoisa() : `Pergunta ${cont}`}</p>
             {estadoDoCard == 0 ? 
-                 <FlipButton onClick={handleClick}>
-                    <img data-test="play-btn" src="../assets/seta_play.png" alt="seta para mostrar pergunta" estadoDoCard={estadoDoCard} />
+                 <FlipButton data-test="play-btn" onClick={handleClick}>
+                    <img src="../assets/seta_play.png" alt="seta para mostrar pergunta" estadoDoCard={estadoDoCard} />
                  </FlipButton>
             : renderizarStatusCard()
             }

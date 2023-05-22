@@ -21,21 +21,21 @@ export default function CardDois({ card, handleClick, setEscolha, setQtdConcluid
             <p data-test="flashcard-text">{card.answer}</p>
 
             <BoxButton>
-                <button onClick={() => {
+                <button data-test="no-btn" onClick={() => {
                     statusEscolha("Não lembrei")
                     handleClick()
                     setQtdConcluidos(qtdConcluidos + 1)
                 }} className="vermelho">
                     Não lembrei
                 </button>
-                <button onClick={() => {
+                <button data-test="partial-btn" onClick={() => {
                     statusEscolha("Quase não lembrei")
                     handleClick()
                     setQtdConcluidos(qtdConcluidos + 1)
                 }} className="amarelo">
                     Quase não lembrei
                 </button>
-                <button onClick={() => {
+                <button data-test="zap-btn" onClick={() => {
                     statusEscolha("Zap!")
                     handleClick()
                     setQtdConcluidos(qtdConcluidos + 1)

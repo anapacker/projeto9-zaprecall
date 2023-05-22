@@ -10,7 +10,7 @@ export default function BoxCards({deckCards, qtdConcluidos, setQtdConcluidos}){
             <img src="../assets/logo.png" alt="Logo ZapRecall - raio amarelo" />
             <h1>ZapRecall</h1>
         </ContainerLogo>
-        <CardsPerguntaFechada data-test="flashcard">
+        <CardsPerguntaFechada>
             {deckCards.map((card, i) =>(
                 <Flashcards qtdConcluidos={qtdConcluidos} setQtdConcluidos={setQtdConcluidos} key={i} card={card} cont={i +1}/>
                 
