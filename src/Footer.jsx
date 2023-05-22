@@ -1,9 +1,9 @@
 import styled from "styled-components"
 
-export default function(){
+export default function Footer({deckCards, qtdConcluidos}){
     return(
         <FooterConcluido>
-          <p>0/4 CONCLUÍDOS</p>
+          <p>{qtdConcluidos}/{deckCards.length} CONCLUÍDOS</p>
         </FooterConcluido>
     )
 }

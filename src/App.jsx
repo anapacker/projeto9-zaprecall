@@ -2,14 +2,16 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import BoxCards from './BoxCards'
 import Footer from './Footer'
+import deckCards from './deckCards'
 
 function App() {
+  const [qtdConcluidos, setQtdConcluidos] = useState(0)
 
   return (
     <TelaInicial>
       
-      <BoxCards/>
-      <Footer/>
+      <BoxCards deckCards={deckCards} qtdConcluidos={qtdConcluidos} setQtdConcluidos={setQtdConcluidos}/>
+      <Footer deckCards={deckCards} qtdConcluidos={qtdConcluidos}/>
     </TelaInicial>
 
   )

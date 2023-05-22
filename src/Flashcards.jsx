@@ -4,7 +4,7 @@ import CardZero from "./CardZero"
 import CardUm from "./CardUm"
 import CardDois from "./CardDois"
 
-export default function Flashcards({card, cont}){
+export default function Flashcards({card, cont, setQtdConcluidos,qtdConcluidos}){
     const [estadoDoCard, setEstadoDoCard] = useState(0)
     const [escolha, setEscolha] = useState("")
 
@@ -22,7 +22,7 @@ export default function Flashcards({card, cont}){
             return <CardUm card={card} handleClick={handleClick} estadoDoCard={estadoDoCard}/>
         }
         if(estadoDoCard == 2){
-            return <CardDois card={card} handleClick={handleClick} estadoDoCard={estadoDoCard} setEscolha={setEscolha}/>
+            return <CardDois card={card} handleClick={handleClick} estadoDoCard={estadoDoCard} setEscolha={setEscolha} qtdConcluidos={qtdConcluidos} setQtdConcluidos={setQtdConcluidos}/>
         }
         if(estadoDoCard == 3){
             return <CardZero cont={cont} handleClick={handleClick} estadoDoCard={estadoDoCard} escolha={escolha}/>

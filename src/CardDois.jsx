@@ -1,8 +1,8 @@
 import { useState } from "react"
 import styled from "styled-components"
 
-export default function CardDois({ card, handleClick, setEscolha}) {
-    
+export default function CardDois({ card, handleClick, setEscolha, setQtdConcluidos, qtdConcluidos}) {
+
     function statusEscolha(escolhido) {
         if(escolhido == "Não lembrei"){
             setEscolha("Não lembrei")
@@ -24,18 +24,21 @@ export default function CardDois({ card, handleClick, setEscolha}) {
                 <button onClick={() => {
                     statusEscolha("Não lembrei")
                     handleClick()
+                    setQtdConcluidos(qtdConcluidos + 1)
                 }} className="vermelho">
                     Não lembrei
                 </button>
                 <button onClick={() => {
                     statusEscolha("Quase não lembrei")
                     handleClick()
+                    setQtdConcluidos(qtdConcluidos + 1)
                 }} className="amarelo">
                     Quase não lembrei
                 </button>
                 <button onClick={() => {
                     statusEscolha("Zap!")
                     handleClick()
+                    setQtdConcluidos(qtdConcluidos + 1)
                 }} className="verde">
                     Zap!
                 </button>

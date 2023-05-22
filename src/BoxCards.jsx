@@ -1,11 +1,9 @@
 import styled from "styled-components"
 import Flashcards from "./Flashcards"
-import deckCards from "./deckCards"
 import { useState } from "react"
 
 
-export default function BoxCards(){
-  
+export default function BoxCards({deckCards, qtdConcluidos, setQtdConcluidos}){
     return(
         <>
         <ContainerLogo>
@@ -14,8 +12,8 @@ export default function BoxCards(){
         </ContainerLogo>
         <CardsPerguntaFechada data-test="flashcard">
             {deckCards.map((card, i) =>(
-                <Flashcards key={i} card={card} cont={i +1}/>
-    
+                <Flashcards qtdConcluidos={qtdConcluidos} setQtdConcluidos={setQtdConcluidos} key={i} card={card} cont={i +1}/>
+                
             ))}
         </CardsPerguntaFechada>
         

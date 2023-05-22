@@ -14,12 +14,11 @@ export default function CardZero({ cont, handleClick, estadoDoCard, escolha }) {
             <img src="../assets/icone_quase.png" alt="icone de quase acertou" /> 
 
         )
-      }else{
-        return(
-            <img src="../assets/icone_certo.png" alt="icone de correto" /> 
-
-        )
-      }     
+      }
+      return(
+        <img src="../assets/icone_certo.png" alt="icone de correto" /> 
+      )
+    
 
     }
     
